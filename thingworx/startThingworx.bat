@@ -13,11 +13,11 @@ for /F "eol=# delims== tokens=1,*" %%a in (config.properties) do (
     if NOT "%%a"=="" if NOT "%%b"=="" set config_!aux:.=_!=%%b
 )
 
-IF DEFINED config_JAVA_HOME (
-    SET JAVA_HOME=%config_JAVA_HOME%
+IF DEFINED config_JRE_HOME (
+    SET JRE_HOME=%config_JRE_HOME%
 )
-IF NOT DEFINED JAVA_HOME ( 
-    rem attempt to get the JAVA_HOME from registry
+IF NOT DEFINED JRE_HOME ( 
+    rem attempt to get the JRE_HOME from registry
 
     set KEY="HKLM\SOFTWARE\JavaSoft\Java Runtime Environment"
     set VALUE=CurrentVersion
@@ -38,13 +38,13 @@ IF NOT DEFINED JAVA_HOME (
         exit /b 1
     )
 
-    set JAVA_HOME=
+    set JRE_HOME=
     for /f "tokens=2,*" %%a in ('reg query !KEY! /v !VALUE! ^| findstr !VALUE!') do (
-        set JAVA_HOME=%%b
+        set JRE_HOME=%%b
     )
 )
 
-set JAVA_HOME
+set JRE_HOME
 rem set the terminal title
 TITLE %config_instanceName%
 rem the platform_settigns.json is in the same folder 

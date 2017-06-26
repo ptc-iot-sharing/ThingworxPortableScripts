@@ -24,7 +24,7 @@ then
     eval "config_${key}='${value}'"
   done < <(grep -v '^#' $file)
 
-  if [[ ${config_JAVA_HOME} ]]; then export JAVA_HOME=${config_JAVA_HOME}; fi
+  if [[ ${config_JRE_HOME} ]]; then export JRE_HOME=${config_JRE_HOME}; fi
 
   PROMPT_COMMAND="echo -ne ${config_instanceName}"
   export THINGWORX_PLATFORM_SETTINGS=$(pwd)
