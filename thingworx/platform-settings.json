@@ -1,0 +1,8 @@
+{
+	"PlatformSettingsConfig" : {
+		"BasicSettings": {
+                "Storage": "../ThingworxStorage",
+                "BackupStorage": "../ThingworxBackupStorage"
+		}	
+	}
+}
