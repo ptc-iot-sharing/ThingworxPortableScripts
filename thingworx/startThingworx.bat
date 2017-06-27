@@ -92,7 +92,7 @@ if "%ERRORLEVEL%" equ "0" (
 )
 
 :FOUNDHTTPSPORT
-choice /M "Found the following free port for HTTP: %freePort%. Would you like to use it?" /c YN
+choice /M "Found the following free port for HTTPS: %freePort%. Would you like to use it?" /c YN
 if errorlevel 255 (
   echo Error. Please answer with yes no
   GOTO :CLOSE
