@@ -44,6 +44,70 @@ IF NOT DEFINED JRE_HOME (
     )
 )
 
+rem check if the ports are open
+set freePort=
+set startPort=%config_http_port%
+
+:SEARCHHTTPPORT
+netstat -o -n -a | find "LISTENING" | find ":%startPort% " > NUL
+if "%ERRORLEVEL%" equ "0" (
+  echo The HTTP port %startPort% is unavailable. Searching for a available one...
+  set /a startPort +=1
+  GOTO :SEARCHHTTPPORT
+) ELSE (
+  set freePort=%startPort%
+  GOTO :FOUNDHTTPPORT
+)
+
+:FOUNDHTTPPORT
+choice /M "Found the following free port for HTTP: %freePort%. Would you like to use it?" /c YN
+if errorlevel 255 (
+  echo Error. Please answer with yes no
+  GOTO :CLOSE
+) else if errorlevel 2 (
+  echo Thingworx cannot start because port %config_http_port% is not free. Please use a free port in config.properties.
+  GOTO :CLOSE
+) else if errorlevel 1 (
+  echo Using port %freePort% for http. Please update the config.properties to keep using this port.
+  set config_http_port=%freePort%
+  pause
+) else if errorlevel 0 (
+  echo Error. Please answer with yes no
+  GOTO :CLOSE
+)
+
+rem check if the ports are open
+set freePort=
+set startPort=%config_https_port%
+
+:SEARCHHTTPSPORT
+netstat -o -n -a | find "LISTENING" | find ":%startPort% " > NUL
+if "%ERRORLEVEL%" equ "0" (
+  echo The HTTPS port %startPort% is unavailable. Searching for a available one...
+  set /a startPort +=1
+  GOTO :SEARCHHTTPSPORT
+) ELSE (
+  set freePort=%startPort%
+  GOTO :FOUNDHTTPSPORT
+)
+
+:FOUNDHTTPSPORT
+choice /M "Found the following free port for HTTP: %freePort%. Would you like to use it?" /c YN
+if errorlevel 255 (
+  echo Error. Please answer with yes no
+  GOTO :CLOSE
+) else if errorlevel 2 (
+  echo Thingworx cannot start because port %config_https_port% is not free. Please use a free port in config.properties.
+  GOTO :CLOSE
+) else if errorlevel 1 (
+  echo Using port %freePort% for https. Please update the config.properties to keep using this port.
+  set config_https_port=%freePort%
+  pause
+) else if errorlevel 0 (
+  echo Error. Please answer with yes no
+  GOTO :CLOSE
+)
+
 set JRE_HOME
 rem set the terminal title
 TITLE %config_instanceName%
@@ -66,6 +130,7 @@ call bin\catalina.bat run %CATALINA_OPTS%
 
 popd
 
+:CLOSE
 rem cleanup namespace config.
 for /F "tokens=1 delims==" %%v in ('set config_ 2^>nul') do (
    set %%v=
