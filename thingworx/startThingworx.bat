@@ -56,7 +56,12 @@ if "%ERRORLEVEL%" equ "0" (
   GOTO :SEARCHHTTPPORT
 ) ELSE (
   set freePort=%startPort%
-  GOTO :FOUNDHTTPPORT
+  if "%startPort%" == "%config_http_port%" (
+    echo "teste"
+    GOTO :FINISHEDHTTPPORT
+  ) ELSE (
+    GOTO :FOUNDHTTPPORT
+  )
 )
 
 :FOUNDHTTPPORT
@@ -76,6 +81,7 @@ if errorlevel 255 (
   GOTO :CLOSE
 )
 
+:FINISHEDHTTPPORT
 rem check if the ports are open
 set freePort=
 set startPort=%config_https_port%
@@ -88,6 +94,11 @@ if "%ERRORLEVEL%" equ "0" (
   GOTO :SEARCHHTTPSPORT
 ) ELSE (
   set freePort=%startPort%
+  if "%startPort%" == "%config_https_port%" (
+    GOTO :FINISHEDHTTPSPORT
+  ) ELSE (
+    GOTO :FOUNDHTTPSPORT
+  )
   GOTO :FOUNDHTTPSPORT
 )
 
@@ -107,7 +118,7 @@ if errorlevel 255 (
   echo Error. Please answer with yes no
   GOTO :CLOSE
 )
-
+:FINISHEDHTTPSPORT
 set JRE_HOME
 rem set the terminal title
 TITLE %config_instanceName%
