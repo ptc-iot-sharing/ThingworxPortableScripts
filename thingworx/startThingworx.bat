@@ -127,6 +127,10 @@ SET THINGWORX_PLATFORM_SETTINGS=%cd%
 echo ==========================================
 echo ==========================================
 echo Finished parsing config.properties. Starting tomcat on http port %config_http_port% and https port %config_https_port%
+
+GOTO :WRITEURLFILE
+
+:STARTTHINGWORX
 pushd apache-tomcat
 IF /I "%config_debugging_enable%"=="true" (
     rem only enable debugging if needed
@@ -140,6 +144,13 @@ SET CATALINA_HOME=%CURRENT_DIR%
 call bin\catalina.bat run %CATALINA_OPTS%
 
 popd
+
+:WRITEURLFILE
+echo [InternetShortcut]> launchThingworx.url
+echo URL=http://localhost:%config_http_port%/Thingworx/Home>> launchThingworx.url
+rem also open the url
+start "" http://localhost:%config_http_port%/Thingworx/Home
+GOTO :STARTTHINGWORX
 
 :CLOSE
 rem cleanup namespace config.
