@@ -145,6 +145,8 @@ call bin\catalina.bat run %CATALINA_OPTS%
 
 popd
 
+GOTO :CLOSE
+
 :WRITEURLFILE
 echo [InternetShortcut]> launchThingworx.url
 echo URL=http://localhost:%config_http_port%/Thingworx/Home>> launchThingworx.url
