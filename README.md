@@ -14,7 +14,7 @@
 This is a fully portable version of Thingworx. You will have a single folder that you can share around which contains an entire Thingworx. It uses the H2 persistence provider, you can run multiple TWXs at the same time on the same machine. 
 
 ## Licensing
-**While all versions come prepackaged with a test license that expires in 120 days, it's recommended that you get your own license from the support portal [https://support.ptc.com/apps/licensePortal/auth/ssl/index?wcn=341](https://support.ptc.com/apps/licensePortal/auth/ssl/index?wcn=341)**
+**While all versions come prepackaged with an unlimited test license, it's recommended that you get your own license from the support portal [https://support.ptc.com/apps/licensePortal/auth/ssl/index?wcn=341](https://support.ptc.com/apps/licensePortal/auth/ssl/index?wcn=341)**
 
 ## Downloads
 
