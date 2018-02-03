@@ -20,6 +20,7 @@ This is a fully portable version of Thingworx. You will have a single folder th
 
 You can download the thingworx portable package from the Romania FTP server. The most important versions are listed below:
 
+* [**Thingworx 8.2**](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx_8.2_Blank.zip)
 * [**Thingworx 8.1**](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx_8.1_Blank.zip)
 * [**Thingworx 8.0**](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx_8.0_Blank.zip)
 * [**Thingworx 7.4**](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx_7.4_Blank.zip)
@@ -30,7 +31,7 @@ You can download the thingworx portable package from the Romania FTP server. The
 
 Download, extract, open the _config.properties_ file in order to configure ports/other settings. Access one of the URLs in the Browser, using _Administrator/admin_ (versions \<8) credentials, or _Administrator/trUf6yuz2?\_Gub_ (version 8.0 and later).
 
-**PLEASE NOTE THAT IN Thingworx 8.1 the default administrator password has been changed to:** Login Name: **Administrator **Password: **trUf6yuz2?_Gub**
+**PLEASE NOTE THAT IN Thingworx 8.0 the default administrator password has been changed to:** Login Name: **Administrator **Password: **trUf6yuz2?_Gub**
 
 *   [http://localhost:8015/Thingworx](http://localhost:8015/Thingworx)
 
@@ -50,7 +51,7 @@ You can also find previous versions of the package here :
 
 ## **Thingworx Portable with DevTools**  
 
-Download from here: [here (ftp server)](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx%208.1%20DevTools.zip). Username: **guest1**, Password: **guest**. It is based in **8.1**.
+Download from here: [here (ftp server)](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx%208.2%20DevTools.zip). Username: **guest1**, Password: **guest**. It is based in **8.2**.
 
 ## What is it (applicable to DevTools version)
 
