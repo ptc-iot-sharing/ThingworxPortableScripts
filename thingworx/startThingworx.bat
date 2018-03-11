@@ -57,7 +57,6 @@ if "%ERRORLEVEL%" equ "0" (
 ) ELSE (
   set freePort=%startPort%
   if "%startPort%" == "%config_http_port%" (
-    echo "teste"
     GOTO :FINISHEDHTTPPORT
   ) ELSE (
     GOTO :FOUNDHTTPPORT

@@ -22,7 +22,7 @@ If the port is currently occupied the startup script will begin searching for an
 
 The startup script will also automatically open a web browser to the HTTP version of thingworx. A `launchThingworx` shortcut is also created allowing you to easily launch the Thingworx Compsoer.
 
-**PLEASE NOTE** THAT IN Thingworx 8.1 the default administrator password has been changed to: Login Name: **Administrator** Password: **trUf6yuz2?_Gub**
+**PLEASE NOTE** THAT IN Thingworx 8.2 the default administrator password has been changed to: Login Name: **Administrator** Password: **trUf6yuz2?_Gub**
 
 Here are the links to the default ports:
 *   [http://localhost:8015/Thingworx](http://localhost:8015/Thingworx)
@@ -34,7 +34,7 @@ When you want to share this with a collegue, you can just zip the entire folder 
 
 A blank Thingworx package with multiple additions that make the life of a developer nicer. It's best to use it while developing Thingworx applications.
 
-Download from here: [here (ftp server)](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx%208.1%20DevTools.zip). Username: **guest1**, Password: **guest**. It is based in **8.1**.
+Download from here: [here (ftp server)](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx%208.2%20DevTools.zip). Username: **guest1**, Password: **guest**. It is based in **8.2**.
 
 Included in the DevTools you have:
 
@@ -56,7 +56,7 @@ Two additional widgets, `Javascript` and `CSS` allow you to write code that chan
 
 #### Collection View widget
 
-A very powerfull widget, that, in most simple usecases can be used as a replacement for a repeater, but is capable of much more advanced usages.
+A very powerful widget, that, in most simple usecases can be used as a replacement for a repeater, but is capable of much more advanced usages. Please note that while 8.2 contains the `Collection` widget out of the box, the `Collection View` has more features and an automatic configurator.
 
 [More information here](https://share.ptc.com/sites/sales/ic/IoT%20Presales%20Enablement/blog/Lists/Posts/Post.aspx?ID=69)
 

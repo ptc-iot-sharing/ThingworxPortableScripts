@@ -21,7 +21,7 @@ If the port is currently occupied the startup script will begin searching for an
 
 The startup script will also automatically open a web browser to the HTTP version of thingworx. A `launchThingworx` shortcut is also created allowing you to easily launch the Thingworx Compsoer.
 
-**PLEASE NOTE** THAT IN Thingworx 8.1 the default administrator password has been changed to: Login Name: **Administrator** Password: **trUf6yuz2?_Gub**
+**PLEASE NOTE** THAT IN Thingworx 8.2 the default administrator password has been changed to: Login Name: **Administrator** Password: **trUf6yuz2?_Gub**
 
 Here are the links to the default ports:
 *   [http://localhost:8015/Thingworx](http://localhost:8015/Thingworx)
@@ -43,7 +43,7 @@ You can also find previous versions of the package here :
 
 A blank Thingworx package with multiple additions that make the life of a developer nicer. It's best to use it while developing Thingworx applications.
 
-Download from here: [here (ftp server)](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx%208.1%20DevTools.zip). Username: **guest1**, Password: **guest**. It is based in **8.1**.
+Download from here: [here (ftp server)](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx%208.2%20DevTools.zip). Username: **guest1**, Password: **guest**. It is based in **8.2**.
 
 Included in the DevTools you have:
 
