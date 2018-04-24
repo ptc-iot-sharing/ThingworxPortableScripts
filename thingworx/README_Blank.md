@@ -11,6 +11,11 @@ This is a fully portable version of Thingworx. You will have a single folder th
 
 **This package contains an unlimited trial lincense. However, it's recommended that you get your own license from the [support portal](https://support.ptc.com/apps/licensePortal/auth/ssl/index?wcn=341) or the internal [Apollo website](http://apollo.ptcnet.ptc.com/Procedures/ThingXRequest.html)**.
 
+## Download
+
+You can always find information about the latest version [here](http://roicentersvn/placatus/ThingworxPortableScripts/src/branch/master/thingworx/README_Blank.md)
+Download from here: [here (ftp server)](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx_8.2_Blank.zip). Username: **guest1**, Password: **guest**. It is based on **8.2.3**.
+
 ## How to use
 
 Open the `config.properties` file in order to configure ports/other settings.

@@ -12,6 +12,11 @@ It also includes multiple additions that make the life of a developer nicer. It'
 
 **This package contains an unlimited trial lincense. However, it's recommended that you get your own license from the [support portal](https://support.ptc.com/apps/licensePortal/auth/ssl/index?wcn=341) or the internal [Apollo website](http://apollo.ptcnet.ptc.com/Procedures/ThingXRequest.html)**.
 
+## Download
+
+You can always find information about the latest version [here](http://roicentersvn/placatus/ThingworxPortableScripts/src/branch/master/thingworx/README_Devtools.md)
+Download from here: [here (ftp server)](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx%208.2%20DevTools.zip). Username: **guest1**, Password: **guest**. It is based on **8.2.3**
+
 ## How to use
 
 Open the `config.properties` file in order to configure ports/other settings. 
@@ -30,11 +35,6 @@ Here are the links to the default ports:
 * [https://localhost:8443/Thingworx](https://localhost:8443/Thingworx)
 
 When you want to share this with a collegue, you can just zip the entire folder and send it.
-
-## Download
-
-You can always find information about the latest version [here](http://roicentersvn/placatus/ThingworxPortableScripts/src/branch/master/thingworx/README_Devtools.md)
-Download from here: [here (ftp server)](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx%208.2%20DevTools.zip). Username: **guest1**, Password: **guest**. It is based in **8.2.3**
 
 ## What's included
 
@@ -94,5 +94,5 @@ On Linux system with _SystemD_ the `systemd_unit.sh` script can automatically ge
 ## **Not working. What to do?**
 
 * Ensure that Java is installed on the machine. You can set the JRE_HOME variable inside the config.properties file, but it's not required.
-* On linux/macOS make sure that the sh files are marked as executable (find . -iname \*.sh | xargs chmod +x )
+* On linux/macOS make sure that the sh files are marked as executable (`find . -iname \*.sh | xargs chmod +x` )
 * Contact me [placatus@ptc.com](mailto:placatus@ptc.com)
