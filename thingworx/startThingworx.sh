@@ -37,8 +37,8 @@ then
   echo -e "${RED}Finished parsing ${WHITE_BG}config.properties${NO_BG}${RED}. Starting tomcat on http port ${WHITE_BG}${config_http_port}${NO_BG}${RED} and https port ${WHITE_BG}${config_https_port}${NO_BG}${NC}"
 
   URL=http://localhost:${config_http_port}/Thingworx/Home
-  [[ -x $BROWSER ]] && exec "$BROWSER" "$URL"
-  path=$(which xdg-open || which gnome-open || which open) && exec "$path" "$URL"
+  [[ -x $BROWSER ]] && exec "$BROWSER" "$URL" &
+  path=$(which xdg-open || which gnome-open || which open) && exec "$path" "$URL" &
   echo "Can't find browser"
 
   if [ "${config_debugging_enable}" == "true" ] ; then

@@ -1,5 +1,9 @@
 # Changelog
 
+## 25.04.2017
+
+* Fixed linux version of startup bash not starting because it gets stuck when opening the browser
+
 ## 23.04.2017
 
 * Updated Monaco Editor to latest
