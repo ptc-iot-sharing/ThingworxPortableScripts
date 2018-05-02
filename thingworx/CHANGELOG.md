@@ -1,5 +1,9 @@
 # Changelog
 
+## 02.05.2017
+
+* Compression is enabled by default in tomcat. This should greatly improve the loading speed. For more information, read [this](https://community.ptc.com/t5/IoT-AR-Tech-Tips/Enable-compression-in-Tomcat-to-speed-up-network-performance-in/td-p/543650).
+
 ## 25.04.2017
 
 * Fixed linux version of startup bash not starting because it gets stuck when opening the browser
