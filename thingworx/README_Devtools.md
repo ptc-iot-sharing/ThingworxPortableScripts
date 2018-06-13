@@ -15,7 +15,7 @@ It also includes multiple additions that make the life of a developer nicer. It'
 ## Download
 
 You can always find information about the latest version [here](http://roicentersvn/placatus/ThingworxPortableScripts/src/branch/master/thingworx/README_Devtools.md)
-Download from here: [here (ftp server)](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx%208.2%20DevTools.zip). Username: **guest1**, Password: **guest**. It is based on **8.2.3**
+Download from here: [here (ftp server)](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx%208.3%20DevTools.zip). Username: **guest1**, Password: **guest**. It is based on **8.3**
 
 ## How to use
 
@@ -79,7 +79,11 @@ For some of the extensions mentioned above, auto-updating is supported. When the
 
 ### Signal Generator
 
-Quick way to generate realistic looking timeseries data. Developed by [Petrisor Lacatus](mailto:placatus@ptc.com).
+Quick way to generate realistic looking timeseries data. See [here](http://roicentersvn/placatus/SignalGeneratorThingworx) for more details. Developed by [Petrisor Lacatus](mailto:placatus@ptc.com).
+
+## Web design Kit
+
+[Web Design Kit](https://marketplace.ptc.com/apps/201557/web-design-kit#!overview) by Dumitru Zanfir. Contains prestyled widget that can be easily reused in your mashup.
 
 ## Advanced Usages
 

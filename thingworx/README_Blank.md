@@ -14,7 +14,7 @@ This is a fully portable version of Thingworx. You will have a single folder th
 ## Download
 
 You can always find information about the latest version [here](http://roicentersvn/placatus/ThingworxPortableScripts/src/branch/master/thingworx/README_Blank.md)
-Download from here: [here (ftp server)](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx_8.2_Blank.zip). Username: **guest1**, Password: **guest**. It is based on **8.2.3**.
+Download from here: [here (ftp server)](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx_8.3_Blank.zip). Username: **guest1**, Password: **guest**. It is based on **8.3.0**.
 
 ## How to use
 
@@ -26,7 +26,7 @@ If the port is currently occupied the startup script will begin searching for an
 
 The startup script will also automatically open a web browser to the HTTP version of thingworx. A `launchThingworx` shortcut is also created allowing you to easily launch the Thingworx Compsoer.
 
-**PLEASE NOTE** THAT IN Thingworx 8.2 the default administrator password has been changed to: Login Name: **Administrator** Password: **trUf6yuz2?_Gub**
+**PLEASE NOTE** THAT IN Thingworx 8.3 the default administrator password has been changed to: Login Name: **Administrator** Password: **Administrator**
 
 Here are the links to the default ports:
 
@@ -57,7 +57,7 @@ On Linux system with _systemD_ the `systemd_unit.sh` script can automatically ge
 
 A blank Thingworx package with multiple additions that make the life of a developer nicer. It's best to use it while developing Thingworx applications.
 
-You can find more details about it [here](http://roicentersvn/placatus/ThingworxPortableScripts/src/branch/master/thingworx/README_Devtools.md), and download [here (ftp server)](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx%208.2%20DevTools.zip). Username: **guest1**, Password: **guest**. It is based in **8.2.3**.
+You can find more details about it [here](http://roicentersvn/placatus/ThingworxPortableScripts/src/branch/master/thingworx/README_Devtools.md), and download [here (ftp server)](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx%208.3%20DevTools.zip). Username: **guest1**, Password: **guest**. It is based in **8.3**.
 
 Included in the DevTools you have:
 
@@ -68,6 +68,7 @@ Included in the DevTools you have:
 * View Widget
 * Refactoring Helper
 * Git Export Extension
+* Web design Kit
 
 ## **Not working. What to do?**
 
