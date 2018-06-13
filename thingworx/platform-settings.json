@@ -3,9 +3,9 @@
 		"BasicSettings": {
 			"Storage": "../ThingworxStorage",
 			"BackupStorage": "../ThingworxBackupStorage"
+		},
+		"AdministratorUserSettings": {
+			"IntialPassword": "Administrator"
 		}
-	},
-	"AdministratorUserSettings": {
-		"IntialPassword": "Administrator"
 	}
 }
