@@ -77,6 +77,10 @@ Move services from one thing to another, change the ThingTemplate of a Thing. Al
 
 For some of the extensions mentioned above, auto-updating is supported. When the Composer loads, the extensions are checked for updates, and a simple UI allows the user to update them without leaving the Composer. The following extensions are supported by this mechanism: _Monaco Code Editor_, _BMCollectionView_, _BMView_, _BMCoreUI_, _BMCodeHost_. Developed by [Bogdan Mihaicuc](mailto:bmihaiciuc@ptc.com).
 
+### Signal Generator
+
+Quick way to generate realistic looking timeseries data. Developed by [Petrisor Lacatus](mailto:placatus@ptc.com).
+
 ## Advanced Usages
 
 ### Other Thingworx versions

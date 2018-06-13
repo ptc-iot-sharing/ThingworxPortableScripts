@@ -1,8 +1,11 @@
 {
-	"PlatformSettingsConfig" : {
+	"PlatformSettingsConfig": {
 		"BasicSettings": {
-                "Storage": "../ThingworxStorage",
-                "BackupStorage": "../ThingworxBackupStorage"
-		}	
+			"Storage": "../ThingworxStorage",
+			"BackupStorage": "../ThingworxBackupStorage"
+		}
+	},
+	"AdministratorUserSettings": {
+		"IntialPassword": "Administrator"
 	}
 }

@@ -61,12 +61,12 @@
 
     <!-- A "Connector" represents an endpoint by which requests are received
          and responses are returned. Documentation at :
-         Java HTTP Connector: /docs/config/http.html (blocking & non-blocking)
+         Java HTTP Connector: /docs/config/http.html
          Java AJP  Connector: /docs/config/ajp.html
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
-    <Connector port="${port.http}" protocol="org.apache.coyote.http11.Http11NioProtocol"
+   <Connector port="${port.http}" protocol="org.apache.coyote.http11.Http11NioProtocol"
                connectionTimeout="20000"
                redirectPort="${port.https}" 
                compression="on" 
@@ -113,7 +113,7 @@
         </SSLHostConfig>
     </Connector>
     -->
-    <Connector port="${port.https}" protocol="org.apache.coyote.http11.Http11NioProtocol"
+   <Connector port="${port.https}" protocol="org.apache.coyote.http11.Http11NioProtocol"
                maxThreads="150" SSLEnabled="true" scheme="https" secure="true"
                keystoreFile=".keystore" keystorePass="${https.keystorePassword}"
                clientAuth="false" sslProtocol="TLS" compression="on" 

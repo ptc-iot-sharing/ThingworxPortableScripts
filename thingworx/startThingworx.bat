@@ -2,9 +2,11 @@
 SETLOCAL enabledelayedexpansion
 
 echo ==========================================
+echo ==========================================
 echo Starting up portable thingworx instance...
 echo ==========================================
 echo Reading config.properties...
+echo ==========================================
 echo ==========================================
 
 rem read the properties file
@@ -41,6 +43,7 @@ IF NOT DEFINED JRE_HOME (
     set JRE_HOME=
     for /f "tokens=2,*" %%a in ('reg query !KEY! /v !VALUE! ^| findstr !VALUE!') do (
         set JRE_HOME=%%b
+        echo Using the JRE_HOME found in registry under %JRE_HOME%
     )
 )
 
@@ -125,7 +128,7 @@ rem the platform_settigns.json is in the same folder
 SET THINGWORX_PLATFORM_SETTINGS=%cd%
 echo ==========================================
 echo ==========================================
-echo Finished parsing config.properties. Starting tomcat on http port %config_http_port% and https port %config_https_port%
+echo Finished parsing config.properties. Starting tomcat on http port %config_http_port% and https port %config_https_port% and using JRE HOME: %JRE_HOME%
 
 GOTO :WRITEURLFILE
 
