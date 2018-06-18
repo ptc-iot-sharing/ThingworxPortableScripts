@@ -5,7 +5,7 @@
 			"BackupStorage": "../ThingworxBackupStorage"
 		},
 		"AdministratorUserSettings": {
-			"IntialPassword": "Administrator"
+			"InitialPassword": "Administrator"
 		}
 	}
 }
