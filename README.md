@@ -20,6 +20,7 @@ This is a fully portable version of Thingworx. You will have a single folder th
 
 You can download the thingworx portable package from the Romania FTP server. The most important versions are listed below:
 
+* [**Thingworx 8.3**](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx_8.3_Blank.zip)
 * [**Thingworx 8.2**](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx_8.2_Blank.zip)
 * [**Thingworx 8.1**](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx_8.1_Blank.zip)
 * [**Thingworx 8.0**](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx_8.0_Blank.zip)
