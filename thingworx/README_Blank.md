@@ -14,7 +14,7 @@ This is a fully portable version of Thingworx. You will have a single folder th
 ## Download
 
 You can always find information about the latest version [here](http://roicentersvn/placatus/ThingworxPortableScripts/src/branch/master/thingworx/README_Blank.md)
-Download from here: [here (ftp server)](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx_8.3_Blank.zip). Username: **guest1**, Password: **guest**. It is based on **8.3.0**.
+Download from here: [here (ftp server)](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx_8.3_Blank.zip). Username: **guest1**, Password: **guest**. It is based on **8.3.1**.
 
 ## How to use
 

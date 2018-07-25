@@ -1,5 +1,12 @@
 # Changelog
 
+## 25.07.2018
+
+* Updated to thingwrox 8.3.1
+* Updated BMCoreUI to latest
+* Added latest SCMUtilities from [here](https://share.ptc.com/sites/sales/ic/IoT%20Presales%20Enablement/blog/Lists/Posts/Post.aspx?ID=73).
+* Added the OCTO.ProjectScanner by Bruce Hulse.
+
 ## 13.06.2018
 
 * Updated thingworx to 8.3.0.
