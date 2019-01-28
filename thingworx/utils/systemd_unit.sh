@@ -19,7 +19,6 @@ User=root
 WorkingDirectory='$THINGWORX_DIRECTORY'
 ExecStart='$THINGWORX_DIRECTORY'startThingworx.sh
 ExecStop=/bin/kill -15 \$MAINPID
-PIDFile='$THINGWORX_DIRECTORY'running.pid
 
 [Install]
 WantedBy=multi-user.target"
