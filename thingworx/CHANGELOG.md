@@ -3,6 +3,10 @@
 ## 28.01.2019
 
 * Updated to Thingworx 8.4
+* Updated to Tomcat 9
+* Default blank passwor is _Administrator12345_
+* Enabled extension upload by default
+* Enabled more types as MediaEntities (including svg)
 
 ## 25.07.2018
 
