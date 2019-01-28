@@ -19,7 +19,6 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://tomcat.apache.org/xml tomcat-users.xsd"
               version="1.0">
-              			 
     <user name="thingworx" password="ptc" roles="admin-gui,manager-gui" />
 <!--
   NOTE:  By default, no user is included in the "manager-gui" role required
