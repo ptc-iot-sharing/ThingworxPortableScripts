@@ -1,5 +1,9 @@
 # Changelog
 
+## 28.01.2019
+
+* Updated to Thingworx 8.4
+
 ## 25.07.2018
 
 * Updated to thingwrox 8.3.1
