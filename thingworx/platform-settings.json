@@ -1,11 +1,19 @@
 {
-	"PlatformSettingsConfig": {
-		"BasicSettings": {
-			"Storage": "../ThingworxStorage",
-			"BackupStorage": "../ThingworxBackupStorage"
-		},
-		"AdministratorUserSettings": {
-			"InitialPassword": "Administrator"
-		}
-	}
+  "PlatformSettingsConfig": {
+    "BasicSettings": {
+      "Storage": "../ThingworxStorage",
+      "BackupStorage": "../ThingworxBackupStorage"
+    },
+    "AdministratorUserSettings": {
+      "InitialPassword": "Administrator12345"
+    }
+  },
+  "PersistenceProviderPackageConfigs": {
+    "H2PersistenceProviderPackage": {
+      "ConnectionInformation": {
+        "password": "Administrator",
+        "username": "twadmin"
+      }
+    }
+  }
 }

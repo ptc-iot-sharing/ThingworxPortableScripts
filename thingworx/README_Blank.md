@@ -14,7 +14,7 @@ This is a fully portable version of Thingworx. You will have a single folder th
 ## Download
 
 You can always find information about the latest version [here](http://roicentersvn/placatus/ThingworxPortableScripts/src/branch/master/thingworx/README_Blank.md)
-Download from here: [here (ftp server)](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx_8.3_Blank.zip). Username: **guest1**, Password: **guest**. It is based on **8.3.1**.
+Download from here: [here (ftp server)](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx_8.4_Blank.zip). Username: **guest1**, Password: **guest**. It is based on **8.4.0**.
 
 ## How to use
 
@@ -26,7 +26,7 @@ If the port is currently occupied the startup script will begin searching for an
 
 The startup script will also automatically open a web browser to the HTTP version of thingworx. A `launchThingworx` shortcut is also created allowing you to easily launch the Thingworx Compsoer.
 
-**PLEASE NOTE** THAT IN Thingworx 8.3 the default administrator password has been changed to: Login Name: **Administrator** Password: **Administrator**
+**PLEASE NOTE** THAT IN Thingworx 8.3 the default administrator password has been changed to: Login Name: **Administrator** Password: **Administrator12345**
 
 Here are the links to the default ports:
 
