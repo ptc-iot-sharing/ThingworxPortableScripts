@@ -6,6 +6,27 @@
     },
     "AdministratorUserSettings": {
       "InitialPassword": "Administrator12345"
+    },
+    "ExtensionPackageImportPolicy": {
+      "importEnabled": false,
+      "allowJarResources": false,
+      "allowJavascriptResources": false,
+      "allowCSSResources": false,
+      "allowJSONResources": false,
+      "allowWebAppResources": false,
+      "allowEntities": false,
+      "allowExtensibleEntities": false
+    },
+    "ContentTypeSettings": {
+      "supportedMediaEntityContentTypes": [
+        "image/svg+xml",
+        "image/png",
+        "image/gif",
+        "image/bmp",
+        "image/jpeg",
+        "application/pdf",
+        "image/vnd.microsoft.icon"
+      ]
     }
   },
   "PersistenceProviderPackageConfigs": {
