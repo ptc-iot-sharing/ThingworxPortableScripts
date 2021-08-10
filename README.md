@@ -16,21 +16,17 @@ This is a fully portable version of Thingworx. You will have a single folder th
 ## Licensing
 **While all versions come prepackaged with an unlimited test license, it's recommended that you get your own license from the support portal [https://support.ptc.com/apps/licensePortal/auth/ssl/index?wcn=341](https://support.ptc.com/apps/licensePortal/auth/ssl/index?wcn=341)**
 
-## Downloads
-
-You can download the thingworx portable package from the Romania FTP server. The most important versions are listed below:
-
-* [**Thingworx 8.3**](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx_8.3_Blank.zip)
-* [**Thingworx 8.2**](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx_8.2_Blank.zip)
-* [**Thingworx 8.1**](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx_8.1_Blank.zip)
-* [**Thingworx 8.0**](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx_8.0_Blank.zip)
-* [**Thingworx 7.4**](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx_7.4_Blank.zip)
-* [**Thingworx 7.3**](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx_7.3_Blank.zip)
-* [**Thingworx 7.2.7**](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx_7.2.7_Blank.zip)
-
 ## How to use:
 
-Download, extract, open the _config.properties_ file in order to configure ports/other settings. Access one of the URLs in the Browser, using _Administrator/admin_ (versions \<8) credentials, or _Administrator/trUf6yuz2?\_Gub_ (version 8.0 and later).
+1. Download, extract the entire repository.
+2. Open the _config.properties_ file in order to configure ports/other settings.
+3. Download Tomcat from https://tomcat.apache.org/download-90.cgi, grabbing the core zip folder.
+4. Extract tomcat into the tomcat folder, making sure that no files are overwritten.
+5. Download the ThingWorx H2 version you want to use from the PTC Support portal
+6. Place the Thingworx.war file under `/apache-tomcat/webapps`
+7. Start thingworx using one of the two scripts `startThingworx.bat` or `startThingworx.sh`.
+8. 
+Access one of the URLs in the Browser, using _Administrator/admin_ (versions \<8) credentials, or _Administrator/trUf6yuz2?\_Gub_ (version 8.0 and later).
 
 **PLEASE NOTE THAT IN Thingworx 8.0 the default administrator password has been changed to:** Login Name: **Administrator **Password: **trUf6yuz2?_Gub**
 
@@ -44,21 +40,7 @@ Open the _config.properties_ file to find out the used ports for http and https.
 
 ## Changing the Thingworx Version
 
-By default, this package uses Thingworx with H2. To change the TWX version just replace the Thingworx.war file in „apache-tomcat/webapps” with your war file. Please note that in place upgrades WILL not work between TWX versions with different version providers. If you want to change the "platform-settings.json" file, you can find it in the root directory of the archive.
-
-You can also find previous versions of the package here :
-
-[ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/) (including 6.5 versions)  
-
-## **Thingworx Portable with DevTools**  
-
-Download from here: [here (ftp server)](ftp://rostorage.ptcnet.ptc.com/SHARE/Petrisor/Thingworx/Thingworx%208.2%20DevTools.zip). Username: **guest1**, Password: **guest**. It is based in **8.2**.
-
-## What is it (applicable to DevTools version)
-
-A fully portable version of Thingworx, version 7.2. You will have a single folder that you can share around which contains an entire Thingworx. It uses the H2 persistence provider, you can run multiple TWXs at the same time on the same machine.
-
-Best to use in development of TW Apps.
+By default, this package uses Thingworx with H2. To change the TWX version just replace the Thingworx.war file in `apache-tomcat/webapps` with your war file. Please note that in place upgrades WILL not work between TWX versions with different version providers. If you want to change the `platform-settings.json` file, you can find it in the root directory of the archive.
 
 Functionalities:
 
@@ -67,30 +49,30 @@ Functionalities:
 *   Linux/OSX support. Run the corresponding startThingworx.sh file.
 *   Windows support. Run the corresponding startThingworx.bat file.
 *   Can easily share whole bundle between windows-linux.
-*   Thingworx "Dev Tools" package: Thingworx JS Services Debugger, Source Exporter, Better Script Editor, Refactoring Helper.
-*   The new [Chart Widgets](http://marketplace.thingworx.com/Items/Custom%20Chart%20Widgets).
 
-## Using the DevTools
+## Related projects
 
+### Better Script Editor - Monaco Code editor
 
-**Thingworx JS Services Debugger**
+A better script editor with a lot of more features, that grealty simplifies writing services.
+
+[Documentation is here](https://github.com/ptc-iot-sharing/MonacoEditorTWX)
+
+### Thingworx JS Services Debugger
+
+**DEPRECATED: This tool is not mantained and may not work in any new Thingworx versions. Contact placatus@iqnox.com for more details.** 
 
 Used for debugging the Javascript services from the Thingworx entities. You can debug either when in Composer(development time) or in MashupViewer(run time).
 
 [Documentation is here](https://share.ptc.com/sites/sales/ic/IoT%20Presales%20Enablement/Shared%20Documents/Custom%20Extensions%20and%20Edge%20MicroServers/Thingworx%20Services%20Debugger%20-%20User%20Guide.pdf).
 
-**Better Script Editor - Monaco Code editor**
-
-A better script editor with a lot of more features
-
-[Documentation is here](http://roicentersvn/placatus/MonacoScriptEditorWidget)
 
 ## **Not working. What to do?**
 
 *   Ensure that Java is installed on the machine. You can set the JAVA_HOME variable inside the config.properties file, but it's not required.
 *   Ensure that you have no other programs listening on the same ports as the ones you configured in config.properties. On windows, you can view the LISTENING ports using (nestat –a –b or using resmon.exe).
 *   On linux/OSX make sure that the sh files are marked as executable (find . -iname \*.sh | xargs chmod +x )
-*   Contact me [placatus@ptc.com](mailto:placatus@ptc.com)
+*   Contact me [placatus@iqnox.com](mailto:placatus@iqnox.com)
 
 ### Changelog
 
