@@ -25,8 +25,7 @@ This is a fully portable version of Thingworx. You will have a single folder th
 5. Download the ThingWorx H2 version you want to use from the PTC Support portal
 6. Place the Thingworx.war file under `/apache-tomcat/webapps`
 7. Start thingworx using one of the two scripts `startThingworx.bat` or `startThingworx.sh`.
-8. 
-Access one of the URLs in the Browser, using _Administrator/admin_ (versions \<8) credentials, or _Administrator/trUf6yuz2?\_Gub_ (version 8.0 and later).
+8. Access one of the URLs in the Browser, using _Administrator/admin_ (versions \<8) credentials, or _Administrator/trUf6yuz2?\_Gub_ (version 8.0 and later).
 
 **PLEASE NOTE THAT IN Thingworx 8.0 the default administrator password has been changed to:** Login Name: **Administrator **Password: **trUf6yuz2?_Gub**
 
