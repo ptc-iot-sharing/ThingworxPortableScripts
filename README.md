@@ -1,11 +1,17 @@
 # Portable Blank Thingworx
 
-***
-    IT IS NOT ADVISED TO SHARE THIS THINGWORX SERVER WITH CUSTOMERS OR USE IT IN PRODUCTION ENVIRONMENTS
-    INTENDED USE IS IN DEVELOPMENT OF THINGWORX APPLICATIONS. BECAUSE IT'S NOT AN OFFICIAL THINGWORX DEPLOYMENT, SUPPORT MAY REJECT TICKETS.
-***
+---
 
-This is a fully portable version of Thingworx. You will have a single folder that you can share around which contains an entire Thingworx. It uses the H2 persistence provider, you can run multiple TWXs at the same time on the same machine. It's tested on Windows, Linux and macOS.
+> [!CAUTION]
+> IT IS NOT ADVISED TO SHARE THIS THINGWORX SERVER WITH CUSTOMERS OR USE IT IN PRODUCTION ENVIRONMENTS
+> INTENDED USE IS IN DEVELOPMENT OF THINGWORX APPLICATIONS. BECAUSE IT'S NOT AN OFFICIAL THINGWORX DEPLOYMENT, SUPPORT MAY REJECT TICKETS.
+
+---
+
+This is portable version of Thingworx. It's tested on Windows, Linux and macOS.
+When using ThingWorx with H2 (versions lower than 9.5), it means that a single folder contains the entire ThingWorx server, that can be archived and moved around.
+
+When using ThingWorx 9.5 or greater, configuration for the target database is needed. Please see the [official docs](https://support.ptc.com/help/thingworx/platform/r9.5/en/#page/ThingWorx/Help/Installation/Installation/database_installation_and_configuration_windows.html#) for more information.
 
 ## How to use
 
@@ -19,15 +25,14 @@ The startup script will also automatically open a web browser to the HTTP versio
 
 Here are the links to the default ports:
 
-* [http://localhost:8015/Thingworx](http://localhost:8015/Thingworx)
-* [https://localhost:8443/Thingworx](https://localhost:8443/Thingworx)
+- [http://localhost:8015/Thingworx](http://localhost:8015/Thingworx)
+- [https://localhost:8443/Thingworx](https://localhost:8443/Thingworx)
 
 ## Advanced Usages
 
 ### Changing the Thingworx Version or the Persistance Package
 
 By default, this package uses Thingworx with PostgreSQL. To change the TWX version just replace the `Thingworx.war` file in `apache-tomcat/webapps` with your war file. Please refer to the migration guide for information on how to move across persistance provider packages. If you want to change the `platform-settings.json` file, you can find it in the root directory of the archive.
-
 
 ### Generating services for an instance
 
@@ -39,6 +44,6 @@ On Linux system with _systemd_ the `systemd_unit.sh` script can automatically ge
 
 ## **Not working. What to do?**
 
-* Ensure that Java is installed on the machine. You can set the JRE_HOME variable inside the config.properties file, but it's not required.
-* On linux/macOS make sure that the _sh_ files are marked as executable (`find . -iname \*.sh | xargs chmod +x` )
-* Contact me [placatus@iqnox.com](mailto:placatus@iqnox.com)
+- Ensure that Java is installed on the machine. You can set the JRE_HOME variable inside the config.properties file, but it's not required.
+- On linux/macOS make sure that the _sh_ files are marked as executable (`find . -iname \*.sh | xargs chmod +x` )
+- Contact me [placatus@iqnox.com](mailto:placatus@iqnox.com)

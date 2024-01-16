@@ -141,7 +141,7 @@ IF /I "%config_debugging_enable%"=="true" (
 )
 echo ==========================================
 echo ==========================================
-set CATALINA_OPTS=-server -Dfile.encoding=UTF-8 -Djava.library.path=webapps/Thingworx/WEB-INF/extensions -d64 -XX:+UseG1GC -Xms%config_config_minMemory% -Dport.http=%config_http_port% -Dport.https=%config_https_port% -Dhttps.keystorePassword=%config_https_keystorePassword% %debugCommand% %config_config_additionalParams% 
+set CATALINA_OPTS=-server -Dfile.encoding=UTF-8 -Djava.library.path=webapps/Thingworx/WEB-INF/extensions -XX:+UseG1GC -Xms%config_config_minMemory% -Dport.http=%config_http_port% -Dport.https=%config_https_port% -Dhttps.keystorePassword=%config_https_keystorePassword% %debugCommand% %config_config_additionalParams% 
 SET CATALINA_HOME=%CURRENT_DIR%
 call bin\catalina.bat run %CATALINA_OPTS%
 

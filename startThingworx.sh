@@ -30,7 +30,7 @@ then
   export THINGWORX_PLATFORM_SETTINGS=$(pwd)
   export CATALINA_PID="$(pwd)/running.pid"
   pushd apache-tomcat > /dev/null
-  
+
   #make sure all the files in the bin folder are executable
   chmod +x bin/*.sh
 
@@ -44,10 +44,10 @@ then
   if [ "${config_debugging_enable}" == "true" ] ; then
     # only enable debugging if needed
     debugCommand="-agentlib:jdwp=transport=dt_socket,address=${config_debugging_port},server=y,suspend=n"
-    echo -e "${RED}Debugging is enabled and starting on ${WHITE_BG}${config_debugging_port}${NO_BG}${NC}" 
- fi
+    echo -e "${RED}Debugging is enabled and starting on ${WHITE_BG}${config_debugging_port}${NO_BG}${NC}"
+  fi
 
-export CATALINA_OPTS="-server -Dfile.encoding=UTF-8 -Djava.library.path=webapps/Thingworx/WEB-INF/extensions -d64 -XX:+UseG1GC -Xms${config_config_minMemory} -Dport.http=${config_http_port} -Dport.https=${config_https_port} -Dhttps.keystorePassword=${config_https_keystorePassword} ${debugCommand} ${config_config_additionalParams} "
+export CATALINA_OPTS="-server -Dfile.encoding=UTF-8 -Djava.library.path=webapps/Thingworx/WEB-INF/extensions -XX:+UseG1GC -Xms${config_config_minMemory} -Dport.http=${config_http_port} -Dport.https=${config_https_port} -Dhttps.keystorePassword=${config_https_keystorePassword} ${debugCommand} ${config_config_additionalParams} "
 export CATALINA_HOME=$(pwd)
 
 source bin/catalina.sh run $CATALINA_OPTS

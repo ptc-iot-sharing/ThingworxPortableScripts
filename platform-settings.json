@@ -7,15 +7,18 @@
     "AdministratorUserSettings": {
       "InitialPassword": "Administrator12345"
     },
+    "MetricsUserSettings": {
+      "InitialPassword": "Administrator12345"
+    },
     "ExtensionPackageImportPolicy": {
-      "importEnabled": false,
-      "allowJarResources": false,
-      "allowJavascriptResources": false,
-      "allowCSSResources": false,
-      "allowJSONResources": false,
-      "allowWebAppResources": false,
-      "allowEntities": false,
-      "allowExtensibleEntities": false
+      "importEnabled": true,
+      "allowJarResources": true,
+      "allowJavascriptResources": true,
+      "allowCSSResources": true,
+      "allowJSONResources": true,
+      "allowWebAppResources": true,
+      "allowEntities": true,
+      "allowExtensibleEntities": true
     },
     "ContentTypeSettings": {
       "supportedMediaEntityContentTypes": [
@@ -33,6 +36,13 @@
     "H2PersistenceProviderPackage": {
       "ConnectionInformation": {
         "password": "Administrator",
+        "username": "twadmin"
+      }
+    },
+    "PostgresPersistenceProviderPackage": {
+      "ConnectionInformation": {
+        "jdbcUrl": "jdbc:postgresql://localhost:5432/thingworx",
+        "password": "password",
         "username": "twadmin"
       }
     }
