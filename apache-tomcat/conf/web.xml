@@ -73,7 +73,7 @@
   <!--                       contents. [null]                               -->
   <!--                                                                      -->
   <!--   sendfileSize        If the connector used supports sendfile, this  -->
-  <!--                       represents the minimal file size in KB for     -->
+  <!--                       represents the minimal file size in KiB for     -->
   <!--                       which sendfile will be used. Use a negative    -->
   <!--                       value to always disable sendfile.  [48]        -->
   <!--                                                                      -->
@@ -104,6 +104,13 @@
   <!--   showServerInfo      Should server information be presented in the  -->
   <!--                       response sent to clients when directory        -->
   <!--                       listings is enabled? [true]                    -->
+  <!--                                                                      -->
+  <!--   allowPartialPut     Should the server treat an HTTP PUT request    -->
+  <!--                       with a Range header as a partial PUT? Note     -->
+  <!--                       that while RFC 7233 clarified that Range       -->
+  <!--                       headers only valid for GET requests, RFC 9110  -->
+  <!--                       (which obsoletes RFC 7233) now allows partial  -->
+  <!--                       puts. [true]                                   -->
 
     <servlet>
         <servlet-name>default</servlet-name>
@@ -185,7 +192,8 @@
   <!--                       arrays, to improve performance in some cases?  -->
   <!--                       [false]                                        -->
   <!--                                                                      -->
-  <!--   ieClassId           The class-id value to be sent to Internet      -->
+  <!--   ieClassId           Deprecated. Will be removed in Tomcat 10.1     -->
+  <!--                       The class-id value to be sent to Internet      -->
   <!--                       Explorer when using <jsp:plugin> tags.         -->
   <!--                       [clsid:8AD9C840-044E-11D1-B3E9-00805F499D93]   -->
   <!--                                                                      -->
@@ -345,6 +353,28 @@
   <!--                        webAppRootDir + File.separator + this prefix. -->
   <!--                        If not set, then webAppRootDir is used.       -->
   <!--                        Recommended value: WEB-INF/cgi                -->
+  <!--                                                                      -->
+  <!--  cmdLineArgumentsDecoded                                             -->
+  <!--                        Only used when enableCmdLineArguments is      -->
+  <!--                        true. The pattern that individual decoded     -->
+  <!--                        command line arguments must match else the    -->
+  <!--                        request will be rejected. This is to          -->
+  <!--                        work-around various issues when Java passes   -->
+  <!--                        the arguments to the OS. See the CGI How-To   -->
+  <!--                        for more details. The default varies by       -->
+  <!--                        platform.                                     -->
+  <!--                        Windows: [[\w\Q-.\\/:\E]+]            -->
+  <!--                        Others:  [.*]                                 -->
+  <!--                        Note that internally the CGI Servlet treats   -->
+  <!--                        [.*] as a special case to improve performance -->
+  <!--                                                                      -->
+  <!--   cmdLineArgumentsEncoded                                            -->
+  <!--                        Only used when enableCmdLineArguments is      -->
+  <!--                        true. The pattern that individual encoded     -->
+  <!--                        command line arguments must match else the    -->
+  <!--                        request will be rejected. The default matches -->
+  <!--                        the allowed values defined by RFC3875.        -->
+  <!--                        [[\w\Q%;/?:@&,$-.!~*'()\E]+]          -->
   <!--                                                                      -->
   <!--   enableCmdLineArguments                                             -->
   <!--                        Are command line parameters generated from    -->
@@ -516,7 +546,7 @@
   <!-- this to work you will need to uncomment the .shtml mime type         -->
   <!-- definition towards the bottom of this file.                          -->
   <!-- The contentType init param allows you to apply SSI processing to JSP -->
-  <!-- pages, javascript, or any other content you wish.  This filter       -->
+  <!-- pages, JavaScript, or any other content you wish.  This filter       -->
   <!-- supports the following initialization parameters (default values are -->
   <!-- in square brackets):                                                 -->
   <!--                                                                      -->
@@ -1741,6 +1771,10 @@
         <mime-type>application/vnd.geogebra.file</mime-type>
     </mime-mapping>
     <mime-mapping>
+        <extension>ggs</extension>
+        <mime-type>application/vnd.geogebra.slides</mime-type>
+    </mime-mapping>
+    <mime-mapping>
         <extension>ggt</extension>
         <mime-type>application/vnd.geogebra.tool</mime-type>
     </mime-mapping>
@@ -2094,7 +2128,7 @@
     </mime-mapping>
     <mime-mapping>
         <extension>js</extension>
-        <mime-type>application/javascript</mime-type>
+        <mime-type>text/javascript</mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>jsf</extension>
@@ -2443,6 +2477,10 @@
     <mime-mapping>
         <extension>mjp2</extension>
         <mime-type>video/mj2</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mjs</extension>
+        <mime-type>text/javascript</mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>mk3d</extension>
@@ -2881,6 +2919,10 @@
     <mime-mapping>
         <extension>oprc</extension>
         <mime-type>application/vnd.palm</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>opus</extension>
+        <mime-type>audio/ogg</mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>org</extension>
@@ -4226,6 +4268,10 @@
         <mime-type>application/x-doom</mime-type>
     </mime-mapping>
     <mime-mapping>
+        <extension>wasm</extension>
+        <mime-type>application/wasm</mime-type>
+    </mime-mapping>
+    <mime-mapping>
         <extension>wav</extension>
         <mime-type>audio/x-wav</mime-type>
     </mime-mapping>
@@ -4628,10 +4674,6 @@
     </mime-mapping>
     <mime-mapping>
         <extension>z</extension>
-        <mime-type>application/x-compress</mime-type>
-    </mime-mapping>
-    <mime-mapping>
-        <extension>Z</extension>
         <mime-type>application/x-compress</mime-type>
     </mime-mapping>
     <mime-mapping>
