@@ -2,3 +2,5 @@ apache-tomcat/*
 !apache-tomcat/conf
 !apache-tomcat/webapps
 !/apache-tomcat/webapps/ROOT/index.jsp
+migrations/postgres/*
+!migrations/postgres/README.md
