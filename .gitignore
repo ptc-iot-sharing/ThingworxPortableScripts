@@ -2,5 +2,11 @@ apache-tomcat/*
 !apache-tomcat/conf
 !apache-tomcat/webapps
 !/apache-tomcat/webapps/ROOT/index.jsp
+apache-tomcat/.keystore
+/apache-tomcat/webapps/Thingworx
+/apache-tomcat/webapps/Thingworx.war
 migrations/postgres/*
 !migrations/postgres/README.md
+ThingworxStorage/*
+keystore-password
+licenseRequestFile.txt
