@@ -10,3 +10,4 @@ migrations/postgres/*
 ThingworxStorage/*
 keystore-password
 licenseRequestFile.txt
+.DS_STORE
