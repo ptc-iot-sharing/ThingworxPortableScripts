@@ -64,4 +64,4 @@ set_environment
 if [ "${config_openbrowser_disabled}" != "true" ]; then
   open_in_browser
 fi
-# start_tomcat
+start_tomcat
