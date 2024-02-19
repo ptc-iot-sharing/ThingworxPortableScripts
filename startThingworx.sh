@@ -1,59 +1,67 @@
 #!/bin/bash
 
-## Bash script for starting thingworx
-## Should be compatible with Linux, as well as OSX
-## It will also run on windows under MinGW, but has been less tested there
+# Bash script for starting Thingworx
+# Should be compatible with Linux, OSX, and Windows under MinGW
 
+# Define color codes
 RED='\033[0;31m'
 WHITE_BG='\033[47m'
-NO_BG='\033[0m'
 NC='\033[0m' # No Color
 
-echo -e "${RED}Starting up portable thingworx instance...${NC}"
-echo -e "${RED}Reading ${WHITE_BG}config.properties${NO_BG}${RED}...${NC}"
+# Function to read and parse the configuration properties
+read_properties() {
+    local file="./config.properties"
+    if [ -f "$file" ]; then
+        echo -e "${RED}Reading ${WHITE_BG}config.properties${NC}${RED}...${NC}"
+        while IFS='=' read -r key value; do
+            key=$(echo "$key" | tr '.' '_')
+            eval "config_${key}='${value}'"
+        done < <(grep -v '^#' "$file")
+    else
+        echo -e "${RED}$file not found.${NC}"
+        exit 1
+    fi
+}
 
-#read the properties file
-file="./config.properties"
+# Function to set environment variables based on config
+set_environment() {
+    [ -n "${config_JRE_HOME}" ] && export JRE_HOME="${config_JRE_HOME}"
+    PROMPT_COMMAND='echo -ne "${config_instanceName}"'
+    export THINGWORX_PLATFORM_SETTINGS="$(pwd)"
+    export CATALINA_PID="$(pwd)/running.pid"
+}
 
-if [ -f "$file" ]
-then
+# Function to open Thingworx Home in a browser
+open_in_browser() {
+    echo -e "${RED}Opening Thingworx in browser...${NC}"
+    local URL="http://localhost:${config_http_port}/Thingworx/Home"
+    [[ -x $BROWSER ]] && exec "$BROWSER" "$URL" &
+    path=$(which xdg-open || which gnome-open || which open) && exec "$path" "$URL"
+}
 
-  while IFS='=' read -r key value
-  do
-    key=$(echo $key | tr '.' '_')
-    eval "config_${key}='${value}'"
-  done < <(grep -v '^#' $file)
+# Function to start Tomcat server
+start_tomcat() {
+    pushd apache-tomcat > /dev/null || exit
+    chmod +x bin/*.sh
+    echo -e "${RED}Finished parsing config.properties. Starting tomcat on HTTP port ${WHITE_BG}${config_http_port}${NC}${RED} and HTTPS port ${WHITE_BG}${config_https_port}${NC}${NC}"
 
-  if [[ ${config_JRE_HOME} ]]; then export JRE_HOME=${config_JRE_HOME}; fi
+    local debugCommand=""
+    if [ "${config_debugging_enable}" == "true" ]; then
+        debugCommand="-agentlib:jdwp=transport=dt_socket,address=${config_debugging_port},server=y,suspend=n"
+        echo -e "${RED}Debugging is enabled and starting on ${WHITE_BG}${config_debugging_port}${NC}${NC}"
+    fi
 
-  PROMPT_COMMAND="echo -ne ${config_instanceName}"
-  export THINGWORX_PLATFORM_SETTINGS=$(pwd)
-  export CATALINA_PID="$(pwd)/running.pid"
-  pushd apache-tomcat > /dev/null
+    export CATALINA_OPTS="-server -Dfile.encoding=UTF-8 -Djava.library.path=webapps/Thingworx/WEB-INF/extensions -XX:+UseG1GC -Xms${config_config_minMemory} -Dport.http=${config_http_port} -Dport.https=${config_https_port} -Dhttps.keystorePassword=${config_https_keystorePassword} ${debugCommand} ${config_config_additionalParams}"
+    export CATALINA_HOME=$(pwd)
+    source bin/catalina.sh run "$CATALINA_OPTS"
+    popd > /dev/null || return
+}
 
-  #make sure all the files in the bin folder are executable
-  chmod +x bin/*.sh
-
-  echo -e "${RED}Finished parsing ${WHITE_BG}config.properties${NO_BG}${RED}. Starting tomcat on http port ${WHITE_BG}${config_http_port}${NO_BG}${RED} and https port ${WHITE_BG}${config_https_port}${NO_BG}${NC}"
-
-  URL=http://localhost:${config_http_port}/Thingworx/Home
-  [[ -x $BROWSER ]] && exec "$BROWSER" "$URL" &
-  path=$(which xdg-open || which gnome-open || which open) && exec "$path" "$URL" &
-  echo "Can't find browser"
-
-  if [ "${config_debugging_enable}" == "true" ] ; then
-    # only enable debugging if needed
-    debugCommand="-agentlib:jdwp=transport=dt_socket,address=${config_debugging_port},server=y,suspend=n"
-    echo -e "${RED}Debugging is enabled and starting on ${WHITE_BG}${config_debugging_port}${NO_BG}${NC}"
-  fi
-
-export CATALINA_OPTS="-server -Dfile.encoding=UTF-8 -Djava.library.path=webapps/Thingworx/WEB-INF/extensions -XX:+UseG1GC -Xms${config_config_minMemory} -Dport.http=${config_http_port} -Dport.https=${config_https_port} -Dhttps.keystorePassword=${config_https_keystorePassword} ${debugCommand} ${config_config_additionalParams} "
-export CATALINA_HOME=$(pwd)
-
-source bin/catalina.sh run $CATALINA_OPTS
-
-popd > /dev/null
-
-else
-  echo "$file not found."
+# Main script execution
+echo -e "${RED}Starting up portable Thingworx instance...${NC}"
+read_properties
+set_environment
+if [ "${config_openbrowser_disabled}" != "true" ]; then
+  open_in_browser
 fi
+# start_tomcat
