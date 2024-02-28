@@ -3,17 +3,33 @@
 ---
 
 > [!CAUTION]
-> IT IS NOT ADVISED TO SHARE THIS THINGWORX SERVER WITH CUSTOMERS OR USE IT IN PRODUCTION ENVIRONMENTS
-> INTENDED USE IS IN DEVELOPMENT OF THINGWORX APPLICATIONS. BECAUSE IT'S NOT AN OFFICIAL THINGWORX DEPLOYMENT, SUPPORT MAY REJECT TICKETS.
+> IT IS NOT ADVISED TO USE THIS THINGWORX DEPLOYMENT IN PRODUCTION ENVIRONMENTS.
+> THE INTENDED USE IS IN DEVELOPMENT OF THINGWORX APPLICATIONS. BECAUSE IT'S NOT AN OFFICIAL THINGWORX DEPLOYMENT, PTC SUPPORT MAY REJECT TICKETS.
 
 ---
 
 This is portable version of Thingworx. It's tested on Windows, Linux and macOS.
 When using ThingWorx with H2 (versions lower than 9.5), it means that a single folder contains the entire ThingWorx server, that can be archived and moved around.
 
-When using ThingWorx 9.5 or greater, configuration for the target database is needed. Please see the [official docs](https://support.ptc.com/help/thingworx/platform/r9.5/en/#page/ThingWorx/Help/Installation/Installation/database_installation_and_configuration_windows.html#) for more information.
+When using ThingWorx 9.5 or greater, which no longer has H2 database support, configuration for the target database is needed. Please see the [official docs](https://support.ptc.com/help/thingworx/platform/r9.5/en/#page/ThingWorx/Help/Installation/Installation/database_installation_and_configuration_windows.html#) for more information.
 
 ## How to use
+
+### Prepare an initial package
+
+This repository only contains scripts and configuration files, and does not redistribute any of the required software packages required to run the Portable ThingWorx.
+
+The following steps must be done to add these software packages on top of this codebase:
+
+1. Unzip the entire package downloaded from git.
+2. Download [Apache Tomcat 9](https://tomcat.apache.org/download-90.cgi), the `zip` binary distribution.
+3. Unzip it into the `apache-tomcat` folder, ensuring that the files that already exist in it are not overwritten (`/conf` and `/webapps/ROOT` folders).
+4. Download the ThingWorx version of your choosing from the PTC Support portal.
+5. Place the `Thingworx.war` file in `apache-tomcat/webapps`.
+
+The folder will now contain both the scripts and configuration, and the actual software packages. This folder can be used as the "seed" for multiple other environments, by just duplicating it, or zipping it up and sharing it.
+
+### Configuring the package
 
 Open the `config.properties` file in order to configure ports/other settings.
 
@@ -46,4 +62,4 @@ On Linux system with _systemd_ the `systemd_unit.sh` script can automatically ge
 
 - Ensure that Java is installed on the machine. You can set the JRE_HOME variable inside the config.properties file, but it's not required.
 - On linux/macOS make sure that the _sh_ files are marked as executable (`find . -iname \*.sh | xargs chmod +x` )
-- Contact me [placatus@iqnox.com](mailto:placatus@iqnox.com)
+- Create an issue on github, or contact me [placatus@iqnox.com](mailto:placatus@iqnox.com)
